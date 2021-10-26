@@ -67,7 +67,7 @@ class App extends React.Component {
 
     render() {
         return(<div>
-            <h1>Github Card</h1>
+            <h1>Info' Mation</h1>
             <form name="searchForm" onSubmit={this.handleSubmit}>
                 <input value={this.state.input} type="text" name="searchText" onChange={this.handleChange}/>
                 <button>search</button>

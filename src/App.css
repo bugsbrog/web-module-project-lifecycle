@@ -1,9 +1,18 @@
 body {
+  display:flex;
+  justify-items:center;
+  align-items:center;
   margin: 0;
-  padding: 0;
+  padding: 25px;
   background-color:midnightblue;
   color:white;
   text-shadow: 2px 2px black;
+}
+.div h1 {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-content:center;
 }
 .user-div {
   display:flex;
