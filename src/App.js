@@ -40,6 +40,13 @@ class App extends React.Component {
         })
   }
 
+  handleChange = (e) => {
+    this.setState({
+        ...this.state,
+      currentUser: e.target.value
+    })
+  }
+
   render() {
     return(
         <div>
@@ -47,6 +54,8 @@ class App extends React.Component {
           <form>
             <input
                 value={this.state.currentUser}
+                onChange={this.handleChange}/>
+            <button onClick={this.handleSubmit}>Search</button>
           </form>
     </div>);
   }
