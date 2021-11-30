@@ -8,6 +8,19 @@ class App extends React.Component {
     followers: []
   }
 
+  componentDidMount() {
+    axios.get('https://api.github.com/users/bugsbrog')
+        .then(res => {
+          this.setState({
+            ...this.state,
+            userData: res.data
+          });
+        })
+        .catch(err => {
+          console.error(err);
+        })
+  }
+
   render() {
     return(<div>
       Github Card
