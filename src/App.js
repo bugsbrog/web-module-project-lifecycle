@@ -5,7 +5,7 @@ import Follower from './components/User';
 
 class App extends React.Component {
   state = {
-    userData: [],
+    userData: {},
     currentUser: "bugsbrog",
     followers: []
   }
