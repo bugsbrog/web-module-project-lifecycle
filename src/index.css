@@ -53,8 +53,21 @@ h1 {
   margin-left: 3.7%;
 }
 
+.user-information h2 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.user-information h3 {
+  font-size: 18px;
+}
+
 .follower h3 {
 text-align: center;
+}
+
+h5 {
+  font-size: 12px;
 }
 
 .my-followers {
