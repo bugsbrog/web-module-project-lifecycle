@@ -1,21 +1,22 @@
 import React from 'react';
 import axios from 'axios';
 import User from './components/User';
-import Follower from './components/User';
+import './index.css'
 
 class App extends React.Component {
   state = {
-    userData: {},
-    currentUser: "bugsbrog",
+    user: {},
+    myUser: "bugsbrog",
     followers: []
   }
 
   componentDidMount() {
-    axios.get('https://api.github.com/users/bugsbrog')
+    axios.get(`https://api.github.com/users/${this.state.myUser}`)
         .then(res => {
+          // console.log(res)
           this.setState({
             ...this.state,
-            userData: res.data
+            user: res.data
           });
         })
         .catch(err => {
@@ -24,15 +25,27 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+      if (this.state.user !== prevState.user) {
+          axios.get(`https://api.github.com/users/${this.state.myUser}/followers`)
+              .then(resp => {
+                  this.setState({
+                      ...this.state,
+                      followers: resp.data
+                  })
+              })
+              .catch(err => {
+                  console.error(err);
+              })
+      }
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios.get(`https://api.github.com/users/${this.state.currentUser}`)
+    axios.get(`https://api.github.com/users/${this.state.myUser}`)
         .then(res => {
             this.setState({
               ...this.state,
-              userData: res.data
+              user: res.data
             })
         })
         .catch(err => {
@@ -43,21 +56,24 @@ class App extends React.Component {
   handleChange = (e) => {
     this.setState({
         ...this.state,
-      currentUser: e.target.value
+      myUser: e.target.value
     })
   }
 
   render() {
+    // console.log(this.state)
     return(
         <div>
-          <h1>Github Card</h1>
+          <h1>Github User Card</h1>
           <form>
             <input
-                value={this.state.currentUser}
+                value={this.state.myUser}
                 onChange={this.handleChange}/>
             <button onClick={this.handleSubmit}>Search</button>
           </form>
-    </div>);
+            <User user={this.state.user} followers={this.state.followers}/>
+    </div>
+    );
   }
 }
 
