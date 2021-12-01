@@ -6,9 +6,9 @@ class FollowerList extends React.Component {
     render() {
         console.log(this.props.followers);
         return(
-            <div className="list-div">
+            <div className="follower-list">
                 <h2>Followers:</h2>
-                <div className="list-items">
+                <div className="follower-items">
                     {
                         this.props.followers.map(x => {
                             return <Follower follower={x}/>
