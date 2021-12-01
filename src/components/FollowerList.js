@@ -7,11 +7,13 @@ class FollowerList extends React.Component {
         console.log(this.props.followers);
         return(
             <div className="follower-list">
+                <div className="my-followers">
                 <h2>Followers:</h2>
+                </div>
                 <div className="follower-items">
                     {
-                        this.props.followers.map(x => {
-                            return <Follower follower={x}/>
+                        this.props.followers.map(f => {
+                            return <Follower follower={f}/>
                         })
                     }
                 </div>

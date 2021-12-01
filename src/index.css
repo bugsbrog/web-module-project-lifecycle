@@ -15,31 +15,50 @@ code {
 .profile img {
   border-radius: 15%;
   margin-left: 2%;
+  width: 25%;
 }
 
 img {
   border-radius: 15%;
-}
-
-h1 {
-  margin-left: 10%;
+  /* width: 30%; */
 }
 
 input {
-  margin-left: 12%;
-  margin-bottom: 10px;
-}
-
-.user-information {
-  margin-left: 50px;
+  margin-left: 5.7%;
   margin-bottom: 2%;
 }
 
-/* .follower-list {
-  margin-left: 19%;
-} */
+.user-information {
+  margin-left: 9%;
+  margin-bottom: 2%;
+}
 
 .follower-items {
-  margin-left: 2%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.follower {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  padding: 0;
+  margin: 5%;
+}
+
+h1 {
+  margin-left: 3.7%;
+}
+
+.follower h3 {
+text-align: center;
+}
+
+.my-followers {
+  margin-left: 5%;
+  margin-top: 2%;
+  font-size: larger;
 }
